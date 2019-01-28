@@ -1,0 +1,5 @@
+<!--trip.wxml-->
+<view class="trip">
+  <map-route route-info="{{routeInfo}}"></map-route>
+	}
+</view>
