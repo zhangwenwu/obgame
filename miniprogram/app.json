@@ -7,7 +7,8 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/trip/trip"
+    "pages/qqmap/qqmap",
+    "pages/ocr/ocr"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -16,12 +17,11 @@
     "navigationBarTitleText": "想去哪",
     "navigationBarTextStyle": "black"
   },
-  "plugins":{
-    "myPlugin":{
+  "plugins": {
+    "myPlugin": {
       "version": "1.0.6",
       "provider": "wx5bc2ac602a747594"
     }
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
-
-

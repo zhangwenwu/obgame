@@ -18,7 +18,7 @@ App({
           endLat: '',    // 终点纬度必传
           endLng :'',  //终点经度 必传
           endName:'',  //终点名称 必传
-          mode:"bus"//算路方式 选填驾车（car），公交（bus），步行（walk）
+          mode:'walking'//算路方式 选填驾车（car），公交（bus），步行（walk）
       }
     }
   }

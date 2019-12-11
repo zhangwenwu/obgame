@@ -13,11 +13,20 @@ Page({
     go_type:'步行',
     is_go:false
   },
+  onShareAppMessage: function () {
 
+    return {
+      title: '分享分享',
+      desc: '分享页面的内容分享页面的内容',
+      imageUrl:'http://b302.photo.store.qq.com/psb?/V11GHIAy02wo8S/lwmNpw.NPQ3rqzD8wLxQFOvLGO01mIgk3uJgPuInXds!/b/YYA.DLRFgAAAYgFHDLTtHwAA&bo=RAG6AAAAAAABBNw!&rf=viewer_4',
+      path: '../ocr/ocr?id=1', // 路径，传递参数到指定页面。
+
+    }
+
+  },
+ 
   onLoad: function() {
-    wx.navigateTo({
-      url: '../ocr/ocr?id=1'
-    })
+
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',

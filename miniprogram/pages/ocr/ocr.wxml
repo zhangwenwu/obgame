@@ -2,7 +2,7 @@
 <view class="">
 <view class="page-body">
   <view class="page-section">
-    <view class="weui-cells__title">欢迎,{{userInfo.nickName}}<image class="uploader-image" src="{{userInfo.avatarUrl}}"></image></view>
+    <view class="weui-cells__title">欢迎1,{{userInfo.nickName}}<image class="uploader-image" src="{{userInfo.avatarUrl}}"></image></view>
     <view class="weui-cells weui-cells_after-title">
       <view class="weui-cell weui-cell_input">
         
@@ -36,7 +36,7 @@
 
 </view>
 
-<button type="primary" size="default" bindtap="go_but">gogogo1</button>
+<button type="primary" size="default" bindtap="go_but">gogogo</button>
 <button open-type='share'>分享</button>
 <!--   用户 openid
 <view class="userinfo">
