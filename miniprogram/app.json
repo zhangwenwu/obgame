@@ -10,12 +10,18 @@
     "pages/qqmap/qqmap",
     "pages/ocr/ocr"
   ],
+  
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
     "navigationBarTitleText": "想去哪a",
     "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "需要确认你的位置"
+    }
   },
   "plugins": {
     "myPlugin": {

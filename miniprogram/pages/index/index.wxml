@@ -36,9 +36,11 @@
 
 </view>
 
-<button type="primary" size="default" bindtap="go_but">gogogo1</button>
-<button open-type='share'>分享</button>
-<!--   用户 openid
+<button wx:if="{{hasUserInfo}}" type="primary" size="default" bindtap="go_but">立即出发</button>
+<button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" size="default" >微信授权登录</button>
+
+<!--<button open-type='share'>分享</button>
+   用户 openid
 <view class="userinfo">
   <button 
     open-type="getUserInfo" 

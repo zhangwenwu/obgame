@@ -11,13 +11,11 @@ Page({
     start_input:'',
     end_input:'',
     go_type:'步行',
-    is_go:false
+    is_go:false,
+    hasUserInfo:false
   },
 
   onLoad: function() {
-    wx.navigateTo({
-      url: '../ocr/ocr?id=1'
-    })
     if (!wx.cloud) {
       wx.redirectTo({
         url: '../chooseLib/chooseLib',
@@ -56,13 +54,27 @@ Page({
               console.log(res);
               this.setData({
                 avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
+                userInfo: res.userInfo,
+                hasUserInfo:true,
               })
+           
             }
           })
+        }else{
+          console.log("未授权")
         }
       }
     })
+  },
+  getUserInfo: function (e) {
+    console.log("me: " + "用户点击授权")
+    if (e.detail.userInfo) {
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+     
+    }
   },
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
