@@ -1,0 +1,5 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class='login-container'>
+  <image src='./../../images/img_hyy@2x.png'/>
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">授权登录</button>
+</view>
