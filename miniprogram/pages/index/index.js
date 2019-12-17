@@ -10,7 +10,8 @@ Page({
     start_input:'',
     end_input:'',
     go_type:'步行',
-    is_go:false
+    is_go:false,
+    hasUserInfo:false
   },
 
   onLoad: function() {
@@ -40,6 +41,58 @@ Page({
         var accuracy = res.accuracy
       }
     })
+  
+    /*wx.showModal({
+      title: '提示',
+      content: '这是一个模态弹窗',
+      success(res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })*/
+    // 获取用户信息
+    wx.getSetting({
+      success: res => {
+        if (res.authSetting['scope.userInfo']) {
+          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+          wx.getUserInfo({
+            success: res => {
+              console.log(res);
+              this.setData({
+                avatarUrl: res.userInfo.avatarUrl,
+                userInfo: res.userInfo,
+                hasUserInfo:true,
+              })
+           
+            }
+          })
+        }else{
+          console.log("未授权")
+        }
+      }
+    })
+  },
+  getUserInfo: function (e) {
+    console.log("me: " + "用户点击授权")
+    if (e.detail.userInfo) {
+      this.setData({
+        userInfo: e.detail.userInfo,
+        hasUserInfo: true
+      })
+     
+    }
+  },
+  onGetUserInfo: function(e) {
+    if (!this.logged && e.detail.userInfo) {
+      this.setData({
+        logged: true,
+        avatarUrl: e.detail.userInfo.avatarUrl,
+        userInfo: e.detail.userInfo
+      })
+    }
   },
   //获取起始位置
   startLocation:function(e){
