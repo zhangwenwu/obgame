@@ -3,9 +3,14 @@
  * Copyright 2016, wechat ui team
  * MIT license
  */
-page {
+view{
+  box-sizing:border-box;
+}
+page{
   line-height: 1.6;
   font-family: -apple-system-font, "Helvetica Neue", sans-serif;
+  box-sizing: border-box;
+  height: 100%;
 }
 icon {
   vertical-align: middle;
