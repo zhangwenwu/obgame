@@ -15,11 +15,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     if(wx.getStorageSync('userIdEnc') != ""){
-      app.globalData.userIdEnc = wx.getStorageSync('userIdEnc');
-      wx.navigateTo({
-        url: '/pages/index/index'
+    if (wx.getStorageSync('userInfo') != ""){
+      wx.showToast({
+        title: '正在登录...',
+        icon: 'loading'
       })
+      app.globalData.userInfo = wx.getStorageSync('userInfo');
+      setTimeout( () => {
+        wx.navigateTo({
+          url: '/pages/index/index'
+        })
+      }, 1500);
      }else{
       this.setData({
         canIUse: true,
@@ -53,7 +59,7 @@ Page({
   bindGetUserInfo(e) {
     if (e.detail.rawData) {
       console.log("onGetUserInfo", e.detail)
-      wx.setStorageSync("userIdEnc", e.detail.rawData)
+      wx.setStorageSync("userInfo", JSON.parse(e.detail.rawData))
       this.setData({
         canIUse: false,
       })

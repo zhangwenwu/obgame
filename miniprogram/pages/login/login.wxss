@@ -12,12 +12,15 @@ image{
 }
 button{
   position: absolute;
-  top: 50%;
-  background:#509ee3;
+  top: 48%;
+  background: #FFD447;
   padding:4rpx 16rpx;
   width: 480rpx;
   left: 50%;
   margin-left: -240rpx;
   font-size: 30rpx;
-  color: #fff;
+  color: #333;
+}
+button:after{
+  border: 0;
 }

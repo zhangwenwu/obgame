@@ -20,7 +20,7 @@ App({
           endName:'',  //终点名称 必传
           mode:'walking'//算路方式 选填驾车（car），公交（bus），步行（walk）
       },
-      userIdEnc:{
+      userInfo:{
         
       }
     }

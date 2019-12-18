@@ -19,11 +19,11 @@ Page({
     //   url: '../ocr/ocr?id=1'
     // })
 
-    const userIdEnc = JSON.parse(wx.getStorageSync('userIdEnc'));
-    console.log(userIdEnc)
-    if(userIdEnc != ""){
+    const userInfo = wx.getStorageSync('userInfo');
+    console.log(userInfo)
+    if (userInfo != ""){
       this.setData({
-        userInfo: userIdEnc
+        userInfo
       })
     }else{
       console.log("授权信息失效")
@@ -62,27 +62,6 @@ Page({
         }
       }
     })*/
-    // 获取用户信息
-    // wx.getSetting({
-    //   success: res => {
-    //     if (res.authSetting['scope.userInfo']) {
-    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-    //       wx.getUserInfo({
-    //         success: res => {
-    //           console.log(res);
-    //           this.setData({
-    //             avatarUrl: res.userInfo.avatarUrl,
-    //             userInfo: res.userInfo,
-    //             hasUserInfo:true,
-    //           })
-           
-    //         }
-    //       })
-    //     }else{
-    //       console.log("未授权")
-    //     }
-    //   }
-    // })
   },
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
