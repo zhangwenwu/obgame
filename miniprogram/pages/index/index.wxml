@@ -10,7 +10,7 @@
       <view class="page-section sections section2">
         <view class='location-lf'>
           <view class='txt-top'>起点</view>
-          <input class="weui-input" bindfocus='startLocation' placeholder="你当前的位置" value="{{start_input}}" />
+          <input class="weui-input" bindtap='startLocation' placeholder="你当前的位置" value="{{start_input}}" />
           <image src="./../../images/jiantou@2x.png"/>
         </view>
         <view class='location-rg'>
@@ -21,13 +21,13 @@
       <view class="page-section section2 section3">
         <view class='location-lf'>
           <view class='txt-top'>目的地</view>
-          <input class="weui-input" bindfocus='endLocation' placeholder="你想去的地方" value="{{end_input}}" />
+          <input class="weui-input" bindtap='endLocation' placeholder="你想去的地方" value="{{end_input}}" />
           <image src="./../../images/jiantou@2x.png"/>
         </view>
       </view>
       <view class="page-section section4">
         <view class='location-lf'>
-          <input class="weui-input" bindfocus='go_type' placeholder="请选择出行方式" value="{{go_type}}" />
+          <input class="weui-input" bindtap='go_type' placeholder="请选择出行方式" value="{{go_type}}" />
           <image src="./../../images/jiantou@2x.png"/>
         </view>
       </view>
