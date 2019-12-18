@@ -5,7 +5,7 @@
     <view class='boxs'>
       <view class="page-section section1">
         <text>欢迎, {{userInfo.nickName}}</text>
-        <image class="uploader-image" src="{{userInfo.avatarUrl}}"/>
+        <image class="uploader-image" src="{{userInfo.avatarUrl ? userInfo.avatarUrl : './../../images/weizhi@2x.png'}}"/>
       </view>
       <view class="page-section sections section2">
         <view class='location-lf'>
@@ -33,7 +33,7 @@
       </view>
         
       <button wx:if="{{hasUserInfo}}" bindtap="go_but" class='btn-sure'>立即出发</button>
-      <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='btn-sure'>微信授权登录</button>
+      <!-- <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='btn-sure'>微信授权登录</button> -->
     </view>
   </view>
 

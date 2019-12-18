@@ -16,7 +16,7 @@
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "想去哪a",
+    "navigationBarTitleText": "欧碧出行",
     "navigationBarTextStyle": "black"
   },
   "permission": {
@@ -26,7 +26,7 @@
   },
   "plugins": {
     "myPlugin": {
-      "version": "1.0.6",
+      "version": "1.0.7",
       "provider": "wx5bc2ac602a747594"
     }
   },

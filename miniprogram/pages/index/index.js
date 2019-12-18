@@ -11,7 +11,7 @@ Page({
     end_input:'',
     go_type:'步行',
     is_go:false,
-    hasUserInfo:false
+    hasUserInfo:true
   },
 
   onLoad: function() {
@@ -19,11 +19,20 @@ Page({
     //   url: '../ocr/ocr?id=1'
     // })
 
-    const userInfo = wx.getStorageSync('userInfo');
-    console.log(userInfo)
-    this.setData({
-      userInfo: userInfo
-    })
+    const userIdEnc = JSON.parse(wx.getStorageSync('userIdEnc'));
+    console.log(userIdEnc)
+    if(userIdEnc != ""){
+      this.setData({
+        userInfo: userIdEnc
+      })
+    }else{
+      console.log("授权信息失效")
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
+
+   
   
     if (!wx.cloud) {
       wx.redirectTo({
@@ -54,36 +63,26 @@ Page({
       }
     })*/
     // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              console.log(res);
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo,
-                hasUserInfo:true,
-              })
+    // wx.getSetting({
+    //   success: res => {
+    //     if (res.authSetting['scope.userInfo']) {
+    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
+    //       wx.getUserInfo({
+    //         success: res => {
+    //           console.log(res);
+    //           this.setData({
+    //             avatarUrl: res.userInfo.avatarUrl,
+    //             userInfo: res.userInfo,
+    //             hasUserInfo:true,
+    //           })
            
-            }
-          })
-        }else{
-          console.log("未授权")
-        }
-      }
-    })
-  },
-  getUserInfo: function (e) {
-    console.log("me: " + "用户点击授权")
-    if (e.detail.userInfo) {
-      this.setData({
-        userInfo: e.detail.userInfo,
-        hasUserInfo: true
-      })
-     
-    }
+    //         }
+    //       })
+    //     }else{
+    //       console.log("未授权")
+    //     }
+    //   }
+    // })
   },
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {
