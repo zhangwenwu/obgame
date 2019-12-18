@@ -87,7 +87,7 @@ input{
 .section3 .location-lf{
   width: 100%;
 }
-.section3 .weui-input{
+.section3 .weui-input,.section4 .weui-input{
   width:90%;
 }
 .section4{
